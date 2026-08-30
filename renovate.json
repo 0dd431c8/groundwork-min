@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommitsDisabled"],
+  "timezone": "Etc/UTC",
+  "lockFileMaintenance": { "enabled": true },
+  "packageRules": [
+    {
+      "description": "Oxlint, its formatter, and type-aware binary are one toolchain.",
+      "groupName": "oxc toolchain",
+      "matchPackageNames": ["oxlint", "oxlint-tsgolint", "oxfmt"]
+    },
+    {
+      "description": "The Vitest runner, UI, and coverage provider move together.",
+      "groupName": "vitest",
+      "matchPackageNames": ["vitest", "@vitest/**"]
+    },
+    {
+      "description": "Dev-dependency minors and patches automerge only after the complete gate passes.",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}

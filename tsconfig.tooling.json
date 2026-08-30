@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["bun"]
+  },
+  "include": ["*.config.ts", ".githooks/**/*.ts", "lint/**/*.ts"]
+}

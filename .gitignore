@@ -1,0 +1,29 @@
+# dependencies
+node_modules
+
+# output
+dist
+*.tgz
+
+# coverage
+coverage
+*.lcov
+
+# logs
+logs
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# local configuration
+.env
+.env.local
+.env.*.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# editors and operating systems
+.idea
+.DS_Store

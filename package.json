@@ -1,0 +1,40 @@
+{
+  "name": "groundwork-min",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "git rev-parse --git-dir > /dev/null 2>&1 && git config core.hooksPath .githooks || true",
+    "dev": "bun --watch src/main.ts",
+    "start": "bun src/main.ts",
+    "bundle": "bun build src/main.ts --outdir dist --entry-naming main.mjs --target=node --format=esm --sourcemap=external",
+    "build": "bun run typecheck && bun run bundle",
+    "smoke": "node dist/main.mjs Groundwork",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "dupes": "jscpd",
+    "test": "vitest --project app",
+    "test:infra": "vitest --project lint",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.core.json && tsc --noEmit -p tsconfig.tooling.json",
+    "check": "bun run format:check && bun run lint && bun run dupes && bun run typecheck && bun run test:coverage && bun run bundle && bun run smoke"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/ui": "^4.1.10",
+    "jscpd": "^5.0.16",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "bun": ">=1.3",
+    "node": ">=24"
+  }
+}
