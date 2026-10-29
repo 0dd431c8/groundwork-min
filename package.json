@@ -22,16 +22,16 @@
     "check": "bun run format:check && bun run lint && bun run dupes && bun run typecheck && bun run test:coverage && bun run bundle && bun run smoke"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "@types/node": "^24.0.0",
-    "@vitest/coverage-v8": "^4.1.10",
-    "@vitest/ui": "^4.1.10",
-    "jscpd": "^5.0.16",
-    "oxfmt": "^0.63.0",
-    "oxlint": "^1.78.0",
-    "oxlint-tsgolint": "^7.0.2001",
+    "@types/bun": "^1.4.4",
+    "@types/node": "^24",
+    "@vitest/coverage-v8": "^5.0.5",
+    "@vitest/ui": "^5.0.5",
+    "jscpd": "^5.4.2",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "oxlint-tsgolint": "^7.0.2005",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.10"
+    "vitest": "^5.0.5"
   },
   "engines": {
     "bun": ">=1.3",
